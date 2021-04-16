@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const MyworksWrapper = styled.div`
     margin-right: 200px;
     margin-left: 200px;
+    margin-top:72px;
     .modalCard{
         position: 'fixed';
         top: 0;

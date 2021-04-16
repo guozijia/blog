@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
   position: fixed;
-  top: -6px;
+  top: -0px;
   left: 0;
   z-index: 999;
   height: 60px;
@@ -11,7 +11,7 @@ export const HeaderWrapper = styled.div`
   font-weight:bold;
   color: #000;
   background-color: #fff;
-  box-shadow: 0 2px 8px #f0f1f2;
+  /* box-shadow: 0 2px 8px #f0f1f2; */
   transition:all .3s; 
 
   .content {

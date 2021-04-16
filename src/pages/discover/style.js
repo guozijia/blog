@@ -4,4 +4,5 @@ export const MainWrapper = styled.div`
     width:960px;
     margin-right: auto;
     margin-left: auto;
+    margin-top:72px;
 `
