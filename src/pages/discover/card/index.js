@@ -30,7 +30,7 @@ export default memo(function HYCard (props) {
         momentList: state.getIn(['moment', "momentList"]),
         userlikes: state.getIn(['login', 'userlikes'])
     }), shallowEqual)
-
+    console.log(momentList)
     const { res = [] } = momentList
 
     useEffect(() => {
@@ -67,7 +67,7 @@ export default memo(function HYCard (props) {
     return (
         <MomentCardWrapper>
             <div className="moment comment-input">
-                <HYPublish />
+                <HYPublish setPage={setPage}/>
             </div>
             <div className="moment">
                 {

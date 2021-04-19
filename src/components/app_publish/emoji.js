@@ -13,7 +13,6 @@ const HYEmoji = forwardRef(
                     (getFieldValue("content") + '[' + e.id + ']') :
                     '[' + e.id + ']'
             })
-            console.log(e)
         }
         return (
             <EmojiWrapper ref={ref}>
