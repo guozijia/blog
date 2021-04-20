@@ -4,15 +4,13 @@ import { PictureFilled, SmileFilled } from '@ant-design/icons';
 // import ImgCrop  from 'antd-img-crop'
 import { withRouter } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
-
+import { getMomentListAction } from '@/pages/discover/store/actionGreators'
 import { createMoment } from '../../services/moment'
 import { ModerBootoomWrapper } from './style'
-
+import { useDispatch } from 'react-redux'
 import { uploadMomentPic } from '../../services/moment'
 import UploadCard from './card'
 import HYEmoji from './emoji'
-
-
 
 export default withRouter(memo(function HYPublish (props) {
 
@@ -22,14 +20,13 @@ export default withRouter(memo(function HYPublish (props) {
     const [isEmoji, setIsEmoji] = useState(false)
 
     const { TextArea } = Input;
-
     const [form] = Form.useForm()
-
     const ref = useRef()
+    console.log(form)
+    const dispatch = useDispatch()
 
     const formData = new FormData();
     const onFinish = async (values) => {
-        console.log(values)
         const res = await createMoment(values.content)
         setloading(true)
         if (res.data.flag) {
@@ -39,7 +36,9 @@ export default withRouter(memo(function HYPublish (props) {
             await uploadMomentPic(res.data.momentId, formData)
             setloading(false)
         }
-        props.history.push('/')
+        //props.history.push('/discover')
+        dispatch(getMomentListAction(0, 20))
+        form.resetFields()
     };
 
 

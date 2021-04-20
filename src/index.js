@@ -4,7 +4,7 @@ import 'react-app-polyfill/stable'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import APP from './app'
+import APP from './app.js'
 
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
