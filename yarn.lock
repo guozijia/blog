@@ -1266,14 +1266,6 @@
     "@babel/helper-create-regexp-features-plugin" "^7.12.13"
     "@babel/helper-plugin-utils" "^7.12.13"
 
-"@babel/polyfill@^7.2.5":
-  "integrity" "sha1-Hy1jcdEmG72WHzxdWQkVDhLQvZY="
-  "resolved" "https://registry.npm.taobao.org/@babel/polyfill/download/@babel/polyfill-7.12.1.tgz"
-  "version" "7.12.1"
-  dependencies:
-    "core-js" "^2.6.5"
-    "regenerator-runtime" "^0.13.4"
-
 "@babel/preset-env@^7.12.1", "@babel/preset-env@^7.8.4":
   "integrity" "sha1-PuXyMzFrENBm1/N5xtHhOpaFNlQ="
   "resolved" "https://registry.npm.taobao.org/@babel/preset-env/download/@babel/preset-env-7.13.9.tgz?cache=0&sync_timestamp=1614635224643&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fpreset-env%2Fdownload%2F%40babel%2Fpreset-env-7.13.9.tgz"
@@ -1655,14 +1647,6 @@
     "lodash" "^4.17.20"
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
-
-"@fullpage/react-fullpage@^0.1.19":
-  "integrity" "sha1-dw7PyWR1kAAHzhwpN22n+hH7Jqg="
-  "resolved" "https://registry.npm.taobao.org/@fullpage/react-fullpage/download/@fullpage/react-fullpage-0.1.19.tgz"
-  "version" "0.1.19"
-  dependencies:
-    "@babel/polyfill" "^7.2.5"
-    "fullpage.js" "^3.1.0"
 
 "@hapi/address@2.x.x":
   "integrity" "sha1-XWftQ/P9QaadS5/3tW58DR0KgeU="
@@ -4204,11 +4188,6 @@
   "resolved" "https://registry.npm.taobao.org/core-js/download/core-js-2.6.12.tgz"
   "version" "2.6.12"
 
-"core-js@^2.6.5":
-  "integrity" "sha1-2TM9+nsGXjR8xWgiGdb2kIWcwuw="
-  "resolved" "https://registry.npm.taobao.org/core-js/download/core-js-2.6.12.tgz?cache=0&sync_timestamp=1617822498462&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-2.6.12.tgz"
-  "version" "2.6.12"
-
 "core-js@^3.6.5":
   "integrity" "sha1-zsjeWT246yqF/7Db3rMSy25UYK4="
   "resolved" "https://registry.npm.taobao.org/core-js/download/core-js-3.9.1.tgz"
@@ -6018,11 +5997,6 @@
   "integrity" "sha1-FQStJSMVjKpA20onh8sBQRmU6k8="
   "resolved" "https://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
-
-"fullpage.js@^3.1.0":
-  "integrity" "sha1-Uh5WcxRVAas6Cj0RKE+CI5LgaUE="
-  "resolved" "https://registry.npm.taobao.org/fullpage.js/download/fullpage.js-3.1.0.tgz"
-  "version" "3.1.0"
 
 "function-bind@^1.1.1":
   "integrity" "sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0="
@@ -10680,6 +10654,11 @@
     "dom-helpers" "^5.0.1"
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
+
+"react-typewriter-hook@^1.0.1":
+  "integrity" "sha1-8W185vsrWxMcNFvzitNMzG1puNM="
+  "resolved" "https://registry.nlark.com/react-typewriter-hook/download/react-typewriter-hook-1.0.1.tgz"
+  "version" "1.0.1"
 
 "react-websocket@^2.1.0":
   "integrity" "sha1-EVDOVaqjjoRfVxFoQmaoI3ge4uQ="

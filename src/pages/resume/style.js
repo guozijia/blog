@@ -1,60 +1,50 @@
 import styled from 'styled-components'
+import ImgPage1 from '@/assets/img/as-img-01.jpg'
 
 export const ResumeWrapper = styled.div`
-    width:960px;
     margin-right: auto;
     margin-left: auto;
-    background-color:#fff;
-    z-index: 0;
-    position: relative;
-    margin-bottom: 6px;
-    ::before{
-        content:'';
-        border-width: 1px;
-        border-style: solid;
-        top: 3px;
-        left: 3px;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-color: #e6e6e6;
-        background-color:#fff;
-    }
-    .main{
-        padding-top: 25px;
-        padding-bottom: 40px;
-        position: relative;
-        z-index: 3;
-        padding-left: 25px;
-        padding-right: 25px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: #e6e6e6;
-        background-color:#fff;
-        h2{
-
+    margin-top:60px;
+    .resumepage1{
+        width:100%;
+        background-image:url(${ImgPage1});
+        background-size: cover;
+        background-position: center center;
+        .content{
+            width: 900px;
+            margin: 0 auto;
+            padding: 60px;
+            text-align: center;
+            .image{
+                width: 120px;
+                height: 120px;
+                margin: 0 auto;
+                margin-bottom: 25px;
+                background: #fff;
+                border-radius: 50%;
+                img{
+                    border: 5px solid rgba(31, 53, 67, 0.10);
+                    border-radius: 50%;
+                    width:100%;
+                }
+            }
+            h3{
+                color:#fff;
+                font-weight: 500;
+                font-size:24px;
+                margin-bottom: 20px;
+            }
+            span{
+                margin-bottom:14px;
+            }
+            .text{
+                font-size: 16px;
+                max-width: 600px;
+                margin: 0 auto;
+                margin-bottom: 8px;
+                color: #fff;
+                line-height:20px;
+            }
         }
-        img{
-            width:100px;
-            float:right;
-        }
     }
-    ::after{
-        content:'';
-        border-width: 1px;
-        border-style: solid;
-        top: 6px;
-        left: 6px;
-        width: 100%;
-        height: 100%;
-        border-color: #e6e6e6;
-        position: absolute;
-        background-color:#fff;
-    }
-
-`
-
-export const CardWrapper = styled.div`
-    padding:20px;
 `
