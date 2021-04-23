@@ -6,7 +6,7 @@ import { CardWrapper } from './style'
 export default memo(function HYCardWork (props) {
 
     const [inProp, setInProp] = useState(false);
-    const { pic } = props.item
+    const { pic,title } = props.item
     const maskHandle = (index) => {
         if (index === -1) {
             setInProp(false)
@@ -25,7 +25,7 @@ export default memo(function HYCardWork (props) {
                 timeout={300}
             >
                 <div className="maskText">
-                    <p>为什么呢？</p>
+                    <p>{title}</p>
                 </div>
             </CSSTransition>
         </CardWrapper>

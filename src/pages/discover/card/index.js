@@ -14,6 +14,12 @@ import HYPublish from '@/components/app_publish'
 
 export default memo(function HYCard (props) {
 
+    const { momentList, userlikes, isLogin } = useSelector(state => ({
+        momentList: state.getIn(['moment', "momentList"]),
+        userlikes: state.getIn(['login', 'userlikes']),
+        isLogin: state.getIn(['login', 'isLogin'])
+    }), shallowEqual)
+
     const [page, setPage] = useState(20)
     const [isFinish, setIsFinish] = useState(false)
     const [loading, setLoading] = useState(false)
@@ -23,16 +29,14 @@ export default memo(function HYCard (props) {
     useEffect(() => {
         dispatch(getMomentListAction(0, page))
         setLoading(false)
-        dispatch(getUserLikeAction())
     }, [dispatch, page])
 
-    const { momentList, userlikes } = useSelector(state => ({
-        momentList: state.getIn(['moment', "momentList"]),
-        userlikes: state.getIn(['login', 'userlikes'])
-    }), shallowEqual)
-    console.log(momentList)
-    const { res = [] } = momentList
+    useEffect(() => {
+        if (isLogin) { dispatch(getUserLikeAction()) } return
+    }, [dispatch, isLogin])
 
+
+    const { res = [] } = momentList
     useEffect(() => {
         window.addEventListener('scroll', _handleScroll)
         return () => window.removeEventListener('scroll', _handleScroll)
@@ -67,7 +71,7 @@ export default memo(function HYCard (props) {
     return (
         <MomentCardWrapper>
             <div className="moment comment-input">
-                <HYPublish setPage={setPage}/>
+                <HYPublish isLogin={isLogin} />
             </div>
             <div className="moment">
                 {

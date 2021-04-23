@@ -21,6 +21,11 @@ export const changeUserLikeAction = userlikes => ({
     userlikes
 })
 
+export const changeUserLogin = isLogin => ({
+    type:actionType.CHANGE_IS_LOGIN,
+    isLogin
+})
+
 
 
 export const getUserInfoAction = (username, password) => {
@@ -28,9 +33,10 @@ export const getUserInfoAction = (username, password) => {
         try {
             const userInfo = await getUserInfo()
             dispatch(changeUserInfoAction(userInfo.data))
+            dispatch(changeUserLogin(true))
         } catch (error) {
             removeToken()
-            console.log(error);
+            dispatch(changeUserLogin(false))
         }
     }
 }
@@ -38,6 +44,8 @@ export const getUserInfoAction = (username, password) => {
 export const logoutAction = () => {
     return dispatch => {
         dispatch(changeUserInfoAction({}))
+        removeToken()
+        dispatch(changeUserLogin(false))
     }
 }
 

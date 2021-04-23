@@ -2,6 +2,7 @@ import React, { memo } from 'react'
 import { SearchOutlined } from '@ant-design/icons'
 import { Input } from 'antd'
 import { NavLink } from 'react-router-dom';
+import { useSelector, shallowEqual } from 'react-redux'
 
 import { HeaderWrapper, HeaderLeft, HeaderRight } from './style'
 import { headerLinks } from '@/common/local-data'
@@ -16,6 +17,10 @@ import {
 
 const Header = memo((props) => {
 
+    const { mouseDown } = useSelector(state => ({
+        mouseDown: state.getIn(["mouse", "mouseDown"])
+    }), shallowEqual)
+
     const showSelectItem = (item, index) => {
         return (
             <NavLink to={item.link}>
@@ -27,7 +32,7 @@ const Header = memo((props) => {
     const token = getToken()
 
     return (
-        <HeaderWrapper>
+        <HeaderWrapper mouseDown={mouseDown}>
             <div className="content">
                 <a href="#/" className="logo" style={{ textDecoration: "none" }}>
                     <img src={Logo} alt="" />

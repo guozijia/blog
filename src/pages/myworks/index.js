@@ -9,6 +9,21 @@ import HYModal from './modal'
 import HYDetail from './detail'
 import HYMyworkSkeleton from '@/skeleton/mywork'
 
+import UpsWork from './statics/code/ups.png'
+import ChargeWork from './statics/code/chargeweb.png'
+import EMSWork from './statics/code/ems.png'
+import Visualization from './statics/code/charge.png'
+import SolarWork from './statics/code/solar.png'
+
+
+const code = [
+    { pic: UpsWork, title: "农行UPS电源监控系统" },
+    { pic: ChargeWork, title: "充电桩监控系统" },
+    { pic: EMSWork, title: "储能系统监控" },
+    { pic: Visualization, title: "数据可视化" },
+    { pic: SolarWork, title: "光伏监控系统" }
+]
+
 export default memo(function HYMworks () {
     const [isDetail, setIsDetail] = useState(false)
     const dispatch = useDispatch()
@@ -25,28 +40,34 @@ export default memo(function HYMworks () {
         setIsDetail(true)
     }
 
+    const { design = [] } = myworkList
+
     return (
         <MyworksWrapper>
+            <h1>CODE</h1>
             <Row gutter={[12, 12]}>
-                {/* <Col span={6}>
-                    <div className="workcard">
-                        <img src="https://cdn.dribbble.com/users/5276/screenshots/15412507/media/b3e15a2a9956123d550592b49c3d5cb9.jpg?compress=1&resize=1000x750" alt="" />
-                        <a href='/#'>
-                            <div className="mask">
-                                <p>为什么呢？</p>
-                            </div>
-                        </a>
-                    </div>
-                </Col> */}
-                {   
-                    myworkList.length?
-                    myworkList.map((item, index) => {
-                        return (
-                            <Col span={6} key={index} onClick={e => handleDtail()}>
-                                <HYCardWork item={item} />
-                            </Col>
-                        )
-                    }) : <HYMyworkSkeleton />
+                {
+                    code.length ?
+                        code.map((item, index) => {
+                            return (
+                                <Col span={6} key={index} onClick={e => handleDtail()}>
+                                    <HYCardWork item={item} />
+                                </Col>
+                            )
+                        }) : <HYMyworkSkeleton />
+                }
+            </Row>
+            <h1>DESIGN</h1>
+            <Row gutter={[12, 12]}>
+                {
+                    design.length ?
+                        design.map((item, index) => {
+                            return (
+                                <Col span={6} key={index} onClick={e => handleDtail()}>
+                                    <HYCardWork item={item} />
+                                </Col>
+                            )
+                        }) : <HYMyworkSkeleton />
                 }
             </Row>
             <HYModal>
@@ -54,9 +75,9 @@ export default memo(function HYMworks () {
                     in={isDetail}
                     timeout={300}
                     classNames='detail'
-                    unmountOnExit    
-                    >
-                    <HYDetail setIsDetail={setIsDetail}/>
+                    unmountOnExit
+                >
+                    <HYDetail setIsDetail={setIsDetail} />
                 </CSSTransition>
             </HYModal>
         </MyworksWrapper>

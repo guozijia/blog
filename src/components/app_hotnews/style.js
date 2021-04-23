@@ -14,7 +14,7 @@ export const HotNewsWrapper = styled.div`
         li,.hotWeibo{
             &:nth-child(-n+6){
                 span{
-                    background: #ff5722;
+                    background: #ff387b;
                 } 
             }
             font-size: 12px;

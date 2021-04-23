@@ -21,7 +21,7 @@ const routerMap = [
     { path: "/discover", component: HYDiscover, auth: false },
     { path: "/myworks", component: HYMyworks, auth: false },
     { path: "/blog", component: HYBlog, auth: false },
-    { path: "/resume", component: HYResume, auth: true },
+    { path: "/resume", component: HYResume, auth: false },
     { path: "/profile", component: HYProfile, auth: true },
     { path: "/404", component: HYError },
     //{ path: "/login", component: HYLogin },

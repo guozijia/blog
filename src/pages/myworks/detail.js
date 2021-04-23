@@ -17,7 +17,7 @@ export default memo(function HYDetail (props) {
                 </Button>
             </div>
             <div className="contentDtail">
-                内容
+                   
             </div>
         </DetailWrapper>
     )

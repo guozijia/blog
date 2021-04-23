@@ -1,10 +1,10 @@
-<<<<<<< HEAD
 import React, { memo, useEffect, useCallback, useState, useRef } from 'react'
-import { ResumeWrapper } from './style'
+import { useDispatch } from 'react-redux'
+import { ResumeWrapper, Focusinfo } from './style'
 import useTypewriter from "react-typewriter-hook";
-//import ImgUser from '@/assets/img/user.jpg'
+import { getMouseDownAction } from './store/actionGreators'
 
-const aihaoArr = ["UI设计者", "web开发者", "NodeJs开发者", "区块链爱好者", "历史爱好者"]
+const aihaoArr = ["UI设计师", "web开发工程师", "NodeJs开发工程师", "区块链爱好者", "历史爱好者"]
 let index = 0;
 
 export default memo(function HUResume () {
@@ -13,17 +13,31 @@ export default memo(function HUResume () {
     const intervalRef = useRef({});
     const name = useTypewriter(aihao);
 
+    const dispatch = useDispatch()
+
     useEffect(() => {
-        window.addEventListener('scroll', _handleScroll)
-        return () => window.removeEventListener('scroll', _handleScroll)
+        const isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        const mousewheel = isFirefox ? 'DOMMouseScroll' : 'mousewheel'
+        window.addEventListener(mousewheel, _handleScroll)
+        return () => window.removeEventListener(mousewheel, _handleScroll)
     })
 
-    const _handleScroll = useCallback(
-        (event) => {
-            //const { scrollTop, scrollHeight, clientHeight } = document.documentElement || document.body
+    const _handleScroll = useCallback((event) => {
+        var isFirefox = navigator.userAgent.indexOf('Firefox') !== -1
+        if (isFirefox) {
+            if (event.detail > 0) {
+                dispatch(getMouseDownAction(false))
+            } else {
+                dispatch(getMouseDownAction(true))
+            }
+        } else {
+            if (event.wheelDelta > 0) {
+                dispatch(getMouseDownAction(false))
+            } else {
+                dispatch(getMouseDownAction(true))
+            }
         }
-        , []
-    )
+    }, [dispatch])
 
     useEffect(() => {
         intervalRef.current = setInterval(() => {
@@ -39,44 +53,17 @@ export default memo(function HUResume () {
         <ResumeWrapper>
             <div className="resumepage1">
                 <div className="content">
-                    <div className="image">
-                        <img src="http://localhost:8000/users/15/avatar/4dd270833af1922cf4290765fed5fb61" alt="" />
-=======
-import React, { memo } from 'react';
-import ReactFullpage from '@fullpage/react-fullpage';
-import RE1 from '@/assets/img/re1.webp';
-import RE2 from '@/assets/img/re2.webp';
-
-const Fullpage = () => (
-    <ReactFullpage
-        //fullpage options
-        licenseKey={'YOUR_KEY_HERE'}
-        css3={true}
-        onLeave={(origin, destination, direction) => {
-            console.log("onLeave event", { origin, destination, direction });
-        }}
-        navigation={true}
-        scrollingSpeed={500} /* Options here */
-        render={({ state, fullpageApi }) => {
-            console.log(fullpageApi)
-            return (
-                <ReactFullpage.Wrapper>
-                    <div className="section" style={{ backgroundColor: "#000" }}>
-                        <img src={RE1} alt=""/>
-                        <p>Section 1 (welcome to fullpage.js)</p>
-                        <button onClick={() => fullpageApi.moveSectionDown()}>
-                            Click me to move down
-                        </button>
+                    <Focusinfo>
+                        <h1 className='glitch' data-text="HaloMYBOLG!">HaloMYBOLG!</h1>
+                    </Focusinfo>
+                    <div className="text">我是一名 <span>{name}</span></div>
+                    <div className="text">
+                        "有亡國，有亡天下。亡國與亡天下奚辨？曰：“易姓改號，謂之亡國；仁義充塞，而至於率獸食人，人將相食，謂之亡天下。是故知保天下，然後知保其國。保國者，其君其臣肉食者謀之；保天下者，匹夫之賤與有責焉。"
                     </div>
-                    <div className="section">
-                        <img src={RE2} alt="" />
-                        <p>Section 2</p>
->>>>>>> 5835d57387c07815c9bdb466f607b9ecf772cbcb
-                    </div>
-                    <h3>Mahira Rashid</h3>
-                    <div className="text">我是一名 {name}</div>
-                    <div className="text">Dolor sit amet consectetur elit sed do eiusmod tempor incididunt labore dolore mega aliqua enim minim veniam.</div>
                 </div>
+            </div>
+            <div className="resumepage2">
+
             </div>
         </ResumeWrapper>
     )

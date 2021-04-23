@@ -1,15 +1,18 @@
 import React, { memo, useEffect, useState } from 'react'
 import { getHotnews } from '@/services/external'
+import { Skeleton } from 'antd';
 import { HotNewsWrapper } from './style'
 
 export default memo(function HYHotnews () {
 
     const [hot, setHot] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
+        setLoading(true)
         getHotnews().then(res => {
             const { newslist } = res.data
-            console.log(res)
+            setLoading(false)
             newslist ? setHot(newslist):setHot([]) 
             // setHot(newslist)
         })
@@ -30,7 +33,7 @@ export default memo(function HYHotnews () {
                     })
                 }
             </ul>
-
+            <Skeleton active loading={loading}/>
         </HotNewsWrapper>
     )
 })

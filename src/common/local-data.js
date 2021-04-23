@@ -4,15 +4,16 @@ export const headerLinks = [
         link: '/resume'
     },
     {
+        title: '发现动态',
+        link: '/discover'
+    },
+    {
         title: 'BLOG',
         link: '/blog'
     },
+
     {
-        title:'发现动态',
-        link:'/discover'
-    },
-    {
-        title:'作品',
-        link:'/myworks'
+        title: '我的项目',
+        link: '/myworks'
     },
 ]

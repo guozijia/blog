@@ -4,6 +4,12 @@ export const MyworksWrapper = styled.div`
     margin-right: 200px;
     margin-left: 200px;
     margin-top:72px;
+    h1{
+        font-weight: 600;
+        line-height: 60px;
+        font-size: 16px;
+        color: #6a747c;
+    }
     .modalCard{
         position: 'fixed';
         top: 0;
@@ -81,6 +87,7 @@ export const DetailWrapper = styled.div`
         background-color:#fff;
         border-radius: 1em 1em 0 0;
         height: 100%;
+        padding:23px;
     }
 `
 

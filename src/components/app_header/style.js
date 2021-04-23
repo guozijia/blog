@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderWrapper = styled.div`
   position: fixed;
-  top: -0px;
+  top: ${props => props.mouseDown ? "-60px" : 0};
   left: 0;
   z-index: 999;
   height: 60px;
@@ -11,8 +11,8 @@ export const HeaderWrapper = styled.div`
   font-weight:bold;
   color: #000;
   background-color: #fff;
-  box-shadow: 0 2px 8px #f0f1f2;
-  transition:all .3s; 
+  box-shadow: 0 2px 8px rgb(104 104 104 / 20%);
+  transition:all .5s; 
 
   .content {
     height: 60px;

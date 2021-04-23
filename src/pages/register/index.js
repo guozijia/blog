@@ -10,7 +10,6 @@ import { LoginWrapper } from './style'
 
 export default memo(function HYLogin (props) {
 
-
     const onFinish = async (values: any) => {
         const { username, password } = values
         try {
@@ -28,8 +27,6 @@ export default memo(function HYLogin (props) {
     const onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     }
-
-    
 
     return (
         <LoginWrapper>

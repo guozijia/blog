@@ -2,7 +2,7 @@ import * as actionType from './constants'
 import { Map } from 'immutable'
 
 const defaultState = Map({
-    myworkList: [],
+    myworkList: {},
 })
 
 function reducer (state = defaultState, action) {

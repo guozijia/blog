@@ -18,11 +18,11 @@ export default withRouter(memo(function HYPublish (props) {
     const [visible, setVisible] = useState(false)
     const [fileList, setFileList] = useState([]);
     const [isEmoji, setIsEmoji] = useState(false)
+    const { isLogin } = props
 
     const { TextArea } = Input;
     const [form] = Form.useForm()
     const ref = useRef()
-    console.log(form)
     const dispatch = useDispatch()
 
     const formData = new FormData();
@@ -145,8 +145,8 @@ export default withRouter(memo(function HYPublish (props) {
                         </Form.Item>
                     </div>
                     <Form.Item >
-                        <Button type="primary" htmlType="submit" loading={loading}>
-                            发表动态
+                        <Button type="primary" disabled={!isLogin} htmlType="submit" loading={loading}>
+                            {isLogin?"发表动态":"请登录"}
                         </Button>
                     </Form.Item>
                 </ModerBootoomWrapper>

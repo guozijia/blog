@@ -6,7 +6,6 @@ import { AvatarWrapper } from './style'
 import { useDispatch } from 'react-redux';
 import HYNotice from '@/components/app_notice'
 import { getUserInfoAction, logoutAction } from '@/pages/login/store/actionGreators'
-import { removeToken } from '@/utils/setAuthToken'
 
 export default withRouter(
     memo(function HYAvatar (props) {
@@ -21,8 +20,7 @@ export default withRouter(
         const logout = useCallback(() => {
             props.history.push('/')
             dispatch(logoutAction())
-            removeToken()
-        }, [props, dispatch])
+        }, [dispatch, props])
         const menu = (
             <Menu>
                 <Menu.Item key="0">
