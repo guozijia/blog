@@ -13,14 +13,15 @@ import HYCard from './card'
 export default memo(function HYDiscover (props) {
     return (
         <MainWrapper>
-            <Row gutter={12}>
-                <Col span={17}>
+            <Row gutter={{ xs: 0, sm: 12, md: 12, lg: 12 }}>
+                <Col xs={24} sm={17} md={17} lg={17} xl={17}>
                     <HYCard />
                 </Col>
-                <Col span={7}>
+                <Col xs={0} sm={7} md={7} lg={7} xl={7}>
                     <HYHotnews />
                 </Col>
             </Row>
         </MainWrapper>
     )
 })
+ 

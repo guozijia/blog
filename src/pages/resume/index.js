@@ -58,7 +58,7 @@ export default memo(function HUResume () {
                     </Focusinfo>
                     <div className="text">我是一名 <span>{name}</span></div>
                     <div className="text">
-                        "有亡國，有亡天下。亡國與亡天下奚辨？曰：“易姓改號，謂之亡國；仁義充塞，而至於率獸食人，人將相食，謂之亡天下。是故知保天下，然後知保其國。保國者，其君其臣肉食者謀之；保天下者，匹夫之賤與有責焉。"
+                        "欢迎来到我的个人网站，Arrival取自电影《降临》，一种颠覆因果论的世界;本站前端采用React+Ant Design,后端使用了koa框架，数据库使用Mysql。"
                     </div>
                 </div>
             </div>

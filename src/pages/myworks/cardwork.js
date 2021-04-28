@@ -6,7 +6,7 @@ import { CardWrapper } from './style'
 export default memo(function HYCardWork (props) {
 
     const [inProp, setInProp] = useState(false);
-    const { pic,title } = props.item
+    const { cover_url, title, type } = props.item
     const maskHandle = (index) => {
         if (index === -1) {
             setInProp(false)
@@ -16,7 +16,7 @@ export default memo(function HYCardWork (props) {
     }
     return (
         <CardWrapper inProp={inProp} onMouseLeave={e => { maskHandle(-1) }} onMouseEnter={e => maskHandle(1)}>
-            <img src={pic} alt="" />
+            <img src={cover_url} alt="" />
             <CSSTransition
                 appear
                 in={inProp}

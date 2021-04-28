@@ -9,23 +9,10 @@ import HYModal from './modal'
 import HYDetail from './detail'
 import HYMyworkSkeleton from '@/skeleton/mywork'
 
-import UpsWork from './statics/code/ups.png'
-import ChargeWork from './statics/code/chargeweb.png'
-import EMSWork from './statics/code/ems.png'
-import Visualization from './statics/code/charge.png'
-import SolarWork from './statics/code/solar.png'
-
-
-const code = [
-    { pic: UpsWork, title: "农行UPS电源监控系统" },
-    { pic: ChargeWork, title: "充电桩监控系统" },
-    { pic: EMSWork, title: "储能系统监控" },
-    { pic: Visualization, title: "数据可视化" },
-    { pic: SolarWork, title: "光伏监控系统" }
-]
-
 export default memo(function HYMworks () {
+
     const [isDetail, setIsDetail] = useState(false)
+    const [currentDetail, setCurrentDetail] = useState()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -36,40 +23,26 @@ export default memo(function HYMworks () {
         myworkList: state.getIn(['mywork', 'myworkList'])
     }), shallowEqual)
 
-    const handleDtail = () => {
+    const handleDtail = (item) => {
         setIsDetail(true)
+        setCurrentDetail(item.id)
     }
-
-    const { design = [] } = myworkList
 
     return (
         <MyworksWrapper>
-            <h1>CODE</h1>
             <Row gutter={[12, 12]}>
                 {
-                    code.length ?
-                        code.map((item, index) => {
+                    myworkList.length ?
+                        myworkList.map((item, index) => {
                             return (
-                                <Col span={6} key={index} onClick={e => handleDtail()}>
+                                <Col xs={24} sm={12} md={12} lg={12} xl={6} key={index} onClick={e => handleDtail(item)}>
                                     <HYCardWork item={item} />
                                 </Col>
                             )
                         }) : <HYMyworkSkeleton />
                 }
             </Row>
-            <h1>DESIGN</h1>
-            <Row gutter={[12, 12]}>
-                {
-                    design.length ?
-                        design.map((item, index) => {
-                            return (
-                                <Col span={6} key={index} onClick={e => handleDtail()}>
-                                    <HYCardWork item={item} />
-                                </Col>
-                            )
-                        }) : <HYMyworkSkeleton />
-                }
-            </Row>
+
             <HYModal>
                 <CSSTransition
                     in={isDetail}
@@ -77,7 +50,7 @@ export default memo(function HYMworks () {
                     classNames='detail'
                     unmountOnExit
                 >
-                    <HYDetail setIsDetail={setIsDetail} />
+                    <HYDetail currentDetail={currentDetail} setIsDetail={setIsDetail} />
                 </CSSTransition>
             </HYModal>
         </MyworksWrapper>

@@ -11,4 +11,11 @@ export const AvatarWrapper = styled.div`
         color:#666666;
         margin:0 24px 0 84px;
     }
+    @media all and (max-width: 768px){
+        padding: 0 18px;
+        .message{
+            color:#666666;
+            margin:0 12px 0 0;
+        }
+    }
 `

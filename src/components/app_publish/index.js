@@ -37,6 +37,7 @@ export default withRouter(memo(function HYPublish (props) {
             setloading(false)
         }
         //props.history.push('/discover')
+        setVisible(false)
         dispatch(getMomentListAction(0, 20))
         form.resetFields()
     };
@@ -146,7 +147,7 @@ export default withRouter(memo(function HYPublish (props) {
                     </div>
                     <Form.Item >
                         <Button type="primary" disabled={!isLogin} htmlType="submit" loading={loading}>
-                            {isLogin?"发表动态":"请登录"}
+                            {isLogin ? "发表动态" : "请登录"}
                         </Button>
                     </Form.Item>
                 </ModerBootoomWrapper>

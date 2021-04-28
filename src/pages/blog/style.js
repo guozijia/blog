@@ -8,7 +8,15 @@ export const ResumeWrapper = styled.div`
     z-index: 0;
     position: relative;
     margin-bottom: 6px;
-
+    @media all and (max-width: 768px){
+        width:100%;
+        margin-top:72px;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 0;
+        position: relative;
+        margin-bottom: 6px;
+    }
     .main{
         &::before{
             content:'';

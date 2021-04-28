@@ -1,8 +1,9 @@
-import React, { memo } from 'react'
-import { SearchOutlined } from '@ant-design/icons'
-import { Input } from 'antd'
+import React, { memo, useState, useEffect } from 'react'
+import { SearchOutlined, MenuOutlined } from '@ant-design/icons'
+import { Input, Button } from 'antd'
 import { NavLink } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux'
+import { CSSTransition } from 'react-transition-group'
 
 import { HeaderWrapper, HeaderLeft, HeaderRight } from './style'
 import { headerLinks } from '@/common/local-data'
@@ -17,9 +18,19 @@ import {
 
 const Header = memo((props) => {
 
+    const [isNav, setIsNav] = useState(false)
+
     const { mouseDown } = useSelector(state => ({
         mouseDown: state.getIn(["mouse", "mouseDown"])
     }), shallowEqual)
+
+    useEffect(() => {
+        document.addEventListener('click', documentClick)
+    })
+
+    const documentClick = () => {
+        setIsNav(false)
+    }
 
     const showSelectItem = (item, index) => {
         return (
@@ -27,6 +38,11 @@ const Header = memo((props) => {
                 {item.title}
             </NavLink>
         )
+    }
+
+    const showNavHandle = (e)=>{
+        e.nativeEvent.stopImmediatePropagation();
+        setIsNav(true)
     }
 
     const token = getToken()
@@ -38,6 +54,9 @@ const Header = memo((props) => {
                     <img src={Logo} alt="" />
                     <h2>𝓐𝓻𝓻𝓲𝓿𝓪𝓵</h2>
                 </a>
+                <div className="main-nav">
+                    <Button onClick={e => showNavHandle(e)} type="text" icon={<MenuOutlined />}></Button>
+                </div>
                 <HeaderLeft>
                     <div className="select-list">
                         {
@@ -60,6 +79,25 @@ const Header = memo((props) => {
                     }
                 </HeaderRight>
             </div>
+            <CSSTransition
+                in={isNav}
+                classNames="nav"
+                timeout={400}
+                unmountOnExit={true}
+                appear>
+                <div className="nav-list">
+                    {
+                        headerLinks.map((item, index) => {
+                            return (
+                                <div key={item.title} className="nav-item">
+                                    {showSelectItem(item, index)}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            </CSSTransition>
+
         </HeaderWrapper>
     )
 })

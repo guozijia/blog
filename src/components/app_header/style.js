@@ -33,7 +33,57 @@ export const HeaderWrapper = styled.div`
         margin-left: 12px;
       }
     //text-indent: -9999px; //logo加文字，让其显示在浏览器外
+    }
+    .main-nav{
+      display:none;
+    }
   }
+  @media all and (max-width: 768px){
+    .nav-list{
+      background: #fff;
+      border-top: 1px solid #e7e7e7;
+      .nav-item{
+        a{
+          text-align: center;
+          line-height: 48px;
+          display:block;
+        }
+              
+      }
+    }
+    .nav-enter , .nav-appear{
+    opacity: 0;
+    transform: scale(1.1);
+    }
+    .nav-enter-active , .nav-appear-active{
+        opacity: 1;
+        transform: scale(1);
+        transition: all 300ms
+    }
+    .nav-enter-done , .nav-appear-done{
+        transition: all 300ms
+    }
+
+    .nav-exit{
+        opacity: 1;
+        transform: scale(1);
+    }
+    .nav-exit-active{
+        opacity: 0;
+        transform: scale(1.1);
+        transition: all 500ms
+    }
+    .content{
+      .logo{
+        display:none;
+      }
+      .main-nav{
+        
+        display: flex;
+        align-items: center;
+        padding: 8px;
+      }
+    }
   }
 `
 
@@ -86,6 +136,12 @@ export const HeaderLeft = styled.div`
         //background: #000;
         text-decoration: none;
       }
+    }
+  }
+
+  @media all and (max-width: 768px){
+    .select-list{
+      display: none;
     }
   }
 `

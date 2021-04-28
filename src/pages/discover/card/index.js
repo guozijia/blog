@@ -138,6 +138,7 @@ export default memo(function HYCard (props) {
                 <div
                     style={{
                         textAlign: 'center',
+                        paddingBottom:"20px"
                     }}
                 >
                     {
