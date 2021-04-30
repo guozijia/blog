@@ -6,7 +6,7 @@ import { CardWrapper } from './style'
 export default memo(function HYCardWork (props) {
 
     const [inProp, setInProp] = useState(false);
-    const { cover_url, title, type } = props.item
+    const { cover_url, title } = props.item
     const maskHandle = (index) => {
         if (index === -1) {
             setInProp(false)

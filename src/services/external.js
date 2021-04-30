@@ -6,3 +6,10 @@ export const getHotnews = async () => {
     })
     return res
 }
+
+export const getResumePdf = async ()=>{
+    const res = await request({
+        url:'/download'
+    })
+    return res
+}

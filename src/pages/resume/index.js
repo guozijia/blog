@@ -1,8 +1,10 @@
 import React, { memo, useEffect, useCallback, useState, useRef } from 'react'
+import { Button } from 'antd'
 import { useDispatch } from 'react-redux'
 import { ResumeWrapper, Focusinfo } from './style'
 import useTypewriter from "react-typewriter-hook";
 import { getMouseDownAction } from './store/actionGreators'
+import { BASE_URL} from '@/services/config'
 
 const aihaoArr = ["UI设计师", "web开发工程师", "NodeJs开发工程师", "区块链爱好者", "历史爱好者"]
 let index = 0;
@@ -49,6 +51,10 @@ export default memo(function HUResume () {
         };
     }, [aihao])
 
+    const downHandle = async () => {
+        window.open(`${BASE_URL}/download`)
+    }
+
     return (
         <ResumeWrapper>
             <div className="resumepage1">
@@ -58,8 +64,16 @@ export default memo(function HUResume () {
                     </Focusinfo>
                     <div className="text">我是一名 <span>{name}</span></div>
                     <div className="text">
-                        "欢迎来到我的个人网站，Arrival取自电影《降临》，一种颠覆因果论的世界;本站前端采用React+Ant Design,后端使用了koa框架，数据库使用Mysql。"
+                        "欢迎来到我的个人网站，前端采用React+Ant Design,后端使用了koa框架，数据库使用Mysql，Arrival取自电影《降临》。"
                     </div>
+                    <Button 
+                    onClick={e => downHandle()} 
+                    className="downBtn" 
+                    ghost 
+                    type="primary"
+                    block >
+                        下载简历
+                    </Button>
                 </div>
             </div>
             <div className="resumepage2">

@@ -63,6 +63,10 @@ export const ResumeWrapper = styled.div`
                     font-weight:600;
                 }
             }
+            .downBtn{
+                z-index:5;
+                width:300px;
+            }
         }
     }
     .resumepage2{
