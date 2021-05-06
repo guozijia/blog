@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from 'react'
-import { SearchOutlined, MenuOutlined } from '@ant-design/icons'
+import { SearchOutlined, MenuOutlined, GithubOutlined } from '@ant-design/icons'
 import { Input, Button } from 'antd'
 import { NavLink } from 'react-router-dom';
 import { useSelector, shallowEqual } from 'react-redux'
@@ -74,6 +74,7 @@ const Header = memo((props) => {
                     </div>
                 </HeaderLeft>
                 <HeaderRight>
+                    <a title="项目地址" href="https://github.com/guozijia/gucci" target="view_window"><GithubOutlined style={{fontSize:"20px"}}/></a>
                     {
                         token ? <HYAvatar className="avatar" /> : <NavLink to='/login' className="center">注册 / 登录</NavLink>
                     }

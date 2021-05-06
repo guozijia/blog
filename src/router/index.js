@@ -14,7 +14,7 @@ const HYUpwork = React.lazy(() => import('@/pages/upwork'))
 export default memo(function Router (props) {
     return (
         <HashRouter>
-            <Suspense fallback={<Spin tip="Loading..." style={{ position: "absolute", top: "50%", left: "50%" }} />}>
+            <Suspense fallback={<Spin tip="请稍候..." style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />}>
                 <Switch>
                     <Redirect exact from="/" to="/resume" />
                     <Route exact path="/login" component={HYLogin}></Route>

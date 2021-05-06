@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { ResumeWrapper, Focusinfo } from './style'
 import useTypewriter from "react-typewriter-hook";
 import { getMouseDownAction } from './store/actionGreators'
-import { BASE_URL} from '@/services/config'
+import { BASE_URL } from '@/services/config'
 
 const aihaoArr = ["UI设计师", "web开发工程师", "NodeJs开发工程师", "区块链爱好者", "历史爱好者"]
 let index = 0;
@@ -66,12 +66,12 @@ export default memo(function HUResume () {
                     <div className="text">
                         "欢迎来到我的个人网站，前端采用React+Ant Design,后端使用了koa框架，数据库使用Mysql，Arrival取自电影《降临》。"
                     </div>
-                    <Button 
-                    onClick={e => downHandle()} 
-                    className="downBtn" 
-                    ghost 
-                    type="primary"
-                    block >
+                    <Button
+                        onClick={e => downHandle()}
+                        className="downBtn"
+                        ghost
+                        type="primary"
+                        block >
                         下载简历
                     </Button>
                 </div>

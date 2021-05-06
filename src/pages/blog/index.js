@@ -12,17 +12,17 @@ export default memo(function HYResume () {
                 <div className="nav-cont">
                     <ul>
                         <li>
-                            <Tooltip placement="right" title={"写博客"}>
-                            <NavLink to="/blog">
+                            <Tooltip placement="right" title={"记笔记"}>
+                            <NavLink to="/note">
                                 <HighlightOutlined style={{ fontSize: "18px" }} />
                             </NavLink>
                             </Tooltip>
                         </li>
                         <div className="divider"></div>
-                        <li><NavLink to="/blog"><FontColorsOutlined style={{ fontSize: "18px" }} /></NavLink></li>
-                        <li><NavLink to="/blog"><GitlabOutlined style={{ fontSize: "18px" }} /></NavLink></li>
-                        <li><NavLink to="/blog"><DisconnectOutlined style={{ fontSize: "18px" }} /></NavLink></li>
-                        <li><NavLink to="/blog"><LinkOutlined style={{ fontSize: "18px" }} /></NavLink></li>
+                        <li><NavLink to="/note"><FontColorsOutlined style={{ fontSize: "18px" }} /></NavLink></li>
+                        <li><NavLink to="/note"><GitlabOutlined style={{ fontSize: "18px" }} /></NavLink></li>
+                        <li><NavLink to="/note"><DisconnectOutlined style={{ fontSize: "18px" }} /></NavLink></li>
+                        <li><NavLink to="/note"><LinkOutlined style={{ fontSize: "18px" }} /></NavLink></li>
                     </ul>
                 </div>
                 <div className="nav-btm"></div>

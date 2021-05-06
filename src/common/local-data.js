@@ -8,8 +8,8 @@ export const headerLinks = [
         link: '/discover'
     },
     {
-        title: 'BLOG',
-        link: '/blog'
+        title: '笔记',
+        link: '/note'
     },
 
     {

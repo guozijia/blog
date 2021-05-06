@@ -9,7 +9,7 @@ export const AvatarWrapper = styled.div`
     }
     .message{
         color:#666666;
-        margin:0 24px 0 84px;
+        margin:0 24px 0 0px;
     }
     @media all and (max-width: 768px){
         padding: 0 18px;
