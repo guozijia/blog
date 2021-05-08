@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const AppUserWrapper = styled.div`
     background-color:#fff;
-    padding:20px;
+    padding:90px 0px;
     border-radius: 4px;
     margin-bottom:12px;
     text-align: center;

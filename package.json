@@ -33,6 +33,7 @@
     "redux-immutable": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
+    "wangeditor": "^4.6.17",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

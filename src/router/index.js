@@ -10,6 +10,7 @@ const HYRegister = React.lazy(() => import('@/pages/register'))
 const Layout = React.lazy(() => import('@/components/app_layout'))
 const Error404 = React.lazy(() => import('@/pages/404'))
 const HYUpwork = React.lazy(() => import('@/pages/upwork'))
+const HYNote = React.lazy(()=> import('@/pages/note'))
 
 export default memo(function Router (props) {
     return (
@@ -20,6 +21,7 @@ export default memo(function Router (props) {
                     <Route exact path="/login" component={HYLogin}></Route>
                     <Route exact path="/register" component={HYRegister}></Route>
                     <Route exact path="/upwork" component={HYUpwork}></Route>
+                    <Route exact path="/editor" component={HYNote}></Route>
                     <Layout />
                     <Route exact path="/404" component={Error404}></Route>
                 </Switch>
