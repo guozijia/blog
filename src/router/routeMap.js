@@ -1,19 +1,20 @@
-//import React from 'react'
-
-// const HYDiscover = React.lazy(() => import('@/pages/discover'))
-// const HYError = React.lazy(() => import('@/pages/404'))
-// const HYMyworks = React.lazy(() => import('@/pages/myworks'))
-// const HYResume = React.lazy(() => import('@/pages/resume'))
-//const HYLogin = React.lazy(() => import('@/pages/login'))
+import React from 'react'
 
 // react.lazy 与动画库有冲突？
 
-import HYDiscover from  '@/pages/discover'
-import HYError from '@/pages/404'
-import HYMyworks from '@/pages/myworks'
-import HYResume from '@/pages/resume'
-import HYProfile from '@/pages/profile'
-import HYBlog from '@/pages/blog'
+const HYDiscover = React.lazy(() => import('@/pages/discover'))
+const HYError = React.lazy(() => import('@/pages/404'))
+const HYMyworks = React.lazy(() => import('@/pages/myworks'))
+const HYResume = React.lazy(() => import('@/pages/resume'))
+const HYProfile = React.lazy(() => import('@/pages/profile'))
+const HYBlog = React.lazy(() => import('@/pages/blog'))
+
+// import HYDiscover from  '@/pages/discover'
+// import HYError from '@/pages/404'
+// import HYMyworks from '@/pages/myworks'
+// import HYResume from '@/pages/resume'
+// import HYProfile from '@/pages/profile'
+// import HYBlog from '@/pages/blog'
 // import HYDemo from '@/pages/demo'
 
 

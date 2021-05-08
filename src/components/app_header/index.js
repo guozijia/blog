@@ -50,7 +50,7 @@ const Header = memo((props) => {
     return (
         <HeaderWrapper mouseDown={mouseDown}>
             <div className="content">
-                <a href="#/" className="logo" style={{ textDecoration: "none" }}>
+                <a href="/" className="logo" style={{ textDecoration: "none" }}>
                     <img src={Logo} alt="" />
                     <h2>𝓐𝓻𝓻𝓲𝓿𝓪𝓵</h2>
                 </a>

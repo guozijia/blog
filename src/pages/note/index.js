@@ -1,9 +1,8 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useState, useEffect, useRef } from 'react';
 import { Input, Button, message } from 'antd';
 import { withRouter } from 'react-router-dom'
 import E from 'wangeditor'
 import { EditorWrapper } from './style'
-import { useRef } from 'react/cjs/react.development';
 import { createNote } from '@/services/note'
 import { BASE_URL } from '@/services/config'
 import Logo from '@/assets/img/logo.svg'
@@ -29,7 +28,6 @@ export default withRouter(memo(function HYNote (props) {
     }, [])
     const createHandel = async () => {
         setLoading(true)
-        console.log(content.length)
         if (content.length > 30 && titleRef.current.state.value) {
             const data = {
                 title: titleRef.current.state.value,
@@ -52,7 +50,7 @@ export default withRouter(memo(function HYNote (props) {
     return (
         <EditorWrapper>
             <div className="editor-top">
-                <a href="#/" className="logo" style={{ textDecoration: "none" }}>
+                <a href="/" className="logo" style={{ textDecoration: "none" }}>
                     <img src={Logo} alt="" />
                     <h2>𝓐𝓻𝓻𝓲𝓿𝓪𝓵</h2>
                 </a>

@@ -1,5 +1,5 @@
 import React, { memo, Suspense } from 'react'
-import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 // import { Skeleton } from 'antd';
 // import Skeleton from 'react-loading-skeleton'
 import { Spin } from 'antd';
@@ -14,7 +14,7 @@ const HYNote = React.lazy(()=> import('@/pages/note'))
 
 export default memo(function Router (props) {
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Suspense fallback={<Spin tip="请稍候..." style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />}>
                 <Switch>
                     <Redirect exact from="/" to="/resume" />
@@ -26,6 +26,6 @@ export default memo(function Router (props) {
                     <Route exact path="/404" component={Error404}></Route>
                 </Switch>
             </Suspense>
-        </HashRouter>
+        </BrowserRouter>
     )
 })
